@@ -7,9 +7,19 @@
     let first=document.getElementById('location');
     let table=document.createElement('table');
     first.appendChild(table);
-
+    let sumperhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let sumofAll=0;
    let workinghours=['6 am', '7 am','8 am','9 am','10 am','11 am','12 pm','1 pm' ,'2 pm','3 pm' ,'4 pm','5 pm ','6 pm','7 pm ' ];
    let arryofStores=[];
+
+
+
+
+
+
+   /////////////////////////////////////////// The Intialization 
+
+
 
     function Store (names,mini,maxi,avgi){  
         this.names=names;
@@ -72,13 +82,8 @@
         let st4= new Store('Paris',20,38,2.3)
         let st5= new Store('Lima',2,16,4.6)
 
-                    headerRow ();
 
-          
-      
-
-
-
+       headerRow ();
 
         for (let i = 0; i <arryofStores.length; i++) {
              
@@ -86,7 +91,25 @@
             arryofStores[i].rander();
         }
 
+        totalrow()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////  Global  functions 
 
 
         function headerRow (){
@@ -118,8 +141,6 @@
 
 
 
-        let sumperhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-        let sumofAll=0;
         function totalrow(){
 
 
@@ -145,13 +166,12 @@
 
          }
 
-        
+         
             let totalOfTotals=document.createElement('th');
              lastRow.appendChild(totalOfTotals);
              totalOfTotals.textContent=sumofAll;
 
-                
-}
+             
+   }
 
-            totalrow();
            
