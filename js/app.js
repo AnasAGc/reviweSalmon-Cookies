@@ -9,8 +9,8 @@
     first.appendChild(table);
     let sumperhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     let sumofAll=0;
-   let workinghours=['6 am', '7 am','8 am','9 am','10 am','11 am','12 pm','1 pm' ,'2 pm','3 pm' ,'4 pm','5 pm ','6 pm','7 pm ' ];
-   let arryofStores=[];
+    let workinghours=['6 am', '7 am','8 am','9 am','10 am','11 am','12 pm','1 pm' ,'2 pm','3 pm' ,'4 pm','5 pm ','6 pm','7 pm ' ];
+    let arryofStores=[];
 
 
 
@@ -55,8 +55,8 @@
         let storename=document.createElement("th")
         row2.appendChild(storename)
         storename.textContent=this.names
-        console.log(this.names)
 
+        
         for (let i = 0; i < workinghours.length; i++) {
             
             let dataCookies=document.createElement('td');
@@ -89,11 +89,9 @@
              
             arryofStores[i].perhourcookies();
             arryofStores[i].rander();
-        }
+        };
 
-        totalrow()
-
-
+        totalrow();
 
 
 
@@ -109,7 +107,9 @@
 
 
 
-///////////////////////////////////////////  Global  functions 
+
+
+  //////////////////////////////////////////  Global  functions 
 
 
         function headerRow (){
@@ -166,7 +166,7 @@
 
          }
 
-         
+
             let totalOfTotals=document.createElement('th');
              lastRow.appendChild(totalOfTotals);
              totalOfTotals.textContent=sumofAll;
