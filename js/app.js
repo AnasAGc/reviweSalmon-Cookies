@@ -8,8 +8,7 @@
     let table=document.createElement('table');
     first.appendChild(table);
 
-   let workinghours=['6 am', '7 am','8 am','9 am','10 am','11 am','12 pm','1 pm' ,'2 pm','3 pm' ,'4 pm','5 pm ','6 pm','7 pm ' ]
-   
+   let workinghours=['6 am', '7 am','8 am','9 am','10 am','11 am','12 pm','1 pm' ,'2 pm','3 pm' ,'4 pm','5 pm ','6 pm','7 pm ' ];
    let arryofStores=[];
 
     function Store (names,mini,maxi,avgi){  
@@ -75,7 +74,7 @@
 
                     headerRow ();
 
-                //   arryofStores[0].perhourcookies();
+          
       
 
 
@@ -117,9 +116,10 @@
 
         }
 
-        
 
-        let sumperhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+        let sumperhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        let sumofAll=0;
         function totalrow(){
 
 
@@ -134,17 +134,24 @@
 
             for (let j = 0; j < arryofStores.length; j++) {
                 sumperhour[i]+=arryofStores[j].cookiesper[i];
+                
             }
 
+            sumofAll+=sumperhour[i];
            
             let total =document.createElement('th');
                 lastRow.appendChild(total);
                 total.textContent=sumperhour[i];
 
-            }
+         }
+
+        
+            let totalOfTotals=document.createElement('th');
+             lastRow.appendChild(totalOfTotals);
+             totalOfTotals.textContent=sumofAll;
 
                 
-        }
+}
 
             totalrow();
-            console.log(sumperhour,'hi');
+           
