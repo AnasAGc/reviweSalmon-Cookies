@@ -145,6 +145,7 @@
 
 
             let lastRow=document.createElement('tr');
+            lastRow.setAttribute("id","last")
             table.appendChild(lastRow);
             let totalHours=document.createElement('th');
             lastRow.appendChild(totalHours);
@@ -175,3 +176,23 @@
    }
 
            
+   const form =document.getElementById('Cityform')
+         form.addEventListener('submit',newcity)
+
+   function newcity (event){
+    event.preventDefault()
+
+    let newName=event.target.namess.value
+    let newMax=event.target.max.value
+    let newMin=event.target.min.value
+    let newAvg=event.target.min.value
+
+    let addedCity= new Store (newName,newMin,newMax,newAvg)
+        lastRow=document.getElementById("last")
+        lastRow.remove();
+        addedCity.perhourcookies();
+        addedCity.rander();
+        totalrow()
+
+
+   }
